@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+        }
+        .planet-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+        }
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: yellow;
+            transform: translate(-50%, -50%);
+        }
+        .planet {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #3498db;
+            animation: orbit linear infinite;
+        }
+        .planet.mercury {
+            animation-duration: 4s;
+        }
+        .planet.venus {
+            animation-duration: 7s;
+        }
+        .planet.earth {
+            animation-duration: 10s;
+        }
+        .planet.mars {
+            animation-duration: 15s;
+        }
+        @keyframes orbit {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="planet-container">
+        <div class="sun"></div>
+        <div class="planet mercury"></div>
+        <div class="planet venus"></div>
+        <div class="planet earth"></div>
+        <div class="planet mars"></div>
+    </div>
+</body>
+</html>
